@@ -1,0 +1,50 @@
+<h5>Your Budget</h5>
+<table class="table table-borderless top-20">
+  <!-- Income -->
+  <tr *ngIf="incomeEntries.size != 0" class="table-info">
+    <th width="40%"></th>
+    <th width="20%">Income</th>
+    <th width="20%">Investments</th>
+    <th width="20%">Expenses</th>
+  </tr>
+  <tr *ngFor="let entry of incomeEntries | keyvalue">
+    <td>{{ entry.value.name }}</td>
+    <td>{{ entry.value.amount }} €</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr *ngIf="incomeEntries.size != 0" class="table-info">
+    <td>=</td>
+    <td>{{ sumIncome  }} €</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <!-- Investment --> 
+  <tr *ngFor="let entry of investmentEntries | keyvalue">
+    <td>{{ entry.value.name }}</td>
+    <td></td>
+    <td>{{ entry.value.amount }} €</td>
+    <td></td>
+  </tr>
+  <tr *ngIf="investmentEntries.size != 0" class="table-info">
+    <td>=</td>
+    <td>{{ diffInvestment }} €</td>
+    <td>{{ sumInvestment  }} €</td>
+    <td></td>
+  </tr>
+  <!-- Expense -->  
+  <tr *ngFor="let entry of expenseEntries | keyvalue">
+    <td>{{ entry.value.name }}</td>
+    <td></td>
+    <td></td>
+    <td>{{ entry.value.amount }} €</td>
+  </tr>
+  <tr *ngIf="expenseEntries.size != 0" class="table-info">
+    <td>=</td>
+    <td>{{ diffExpense }} €</td>
+    <td></td>
+    <td>{{ sumExpense  }} €</td>
+  </tr>
+</table>
+
+<button class="btn btn-primary" type="button" (click)="deleteAll()">Delete</button>

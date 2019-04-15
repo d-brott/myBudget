@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-budget';
+  routeAddEntry = {linkeName: 'AddEntry', url: 'add-entry'};
+  routeShowBudget = {linkName: 'ShowBudget', url: 'show-budget'}  
 }
+
