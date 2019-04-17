@@ -16,6 +16,12 @@ export class ShowBudgetComponent implements OnInit {
   private sumExpense: number = 0.00;
   private sumInvestment: number = 0.00;
 
+  private sumIncomeStr: string;
+  private sumExpenseStr: string;
+  private sumInvestmentStr: string;
+  private diffInvestmentStr: string;
+  private diffExpenseStr: string;
+
   private diffInvestment: number = 0.00;
   private diffExpense: number = 0.00;
 
@@ -40,12 +46,18 @@ export class ShowBudgetComponent implements OnInit {
         } else if (value.category == "Investment") {
           this.investmentEntries.set(value.id, value);
           this.sumInvestment += Number(value.amount);
-        }
 
+        }
       })
 
       this.diffInvestment = this.sumIncome - this.sumInvestment;
       this.diffExpense = this.sumIncome - this.sumInvestment - this.sumExpense;
+
+      this.sumIncomeStr = this.sumIncome.toFixed(2);
+      this.sumExpenseStr = this.sumExpense.toFixed(2);
+      this.sumInvestmentStr = this.sumInvestment.toFixed(2);
+      this.diffInvestmentStr = this.diffInvestment.toFixed(2);
+      this.diffExpenseStr = this.diffExpense.toFixed(2);
     });
   }
 

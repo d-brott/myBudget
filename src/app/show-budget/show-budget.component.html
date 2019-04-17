@@ -15,7 +15,7 @@
   </tr>
   <tr *ngIf="incomeEntries.size != 0" class="table-info">
     <td>=</td>
-    <td>{{ sumIncome  }} €</td>
+    <td>{{ sumIncomeStr  }} €</td>
     <td></td>
     <td></td>
   </tr>
@@ -28,8 +28,8 @@
   </tr>
   <tr *ngIf="investmentEntries.size != 0" class="table-info">
     <td>=</td>
-    <td>{{ diffInvestment }} €</td>
-    <td>{{ sumInvestment  }} €</td>
+    <td>{{ diffInvestmentStr }} €</td>
+    <td>{{ sumInvestmentStr  }} €</td>
     <td></td>
   </tr>
   <!-- Expense -->  
@@ -41,9 +41,9 @@
   </tr>
   <tr *ngIf="expenseEntries.size != 0" class="table-info">
     <td>=</td>
-    <td>{{ diffExpense }} €</td>
+    <td>{{ diffExpenseStr }} €</td>
     <td></td>
-    <td>{{ sumExpense  }} €</td>
+    <td>{{ sumExpenseStr  }} €</td>
   </tr>
 </table>
 
